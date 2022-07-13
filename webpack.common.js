@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable import/no-extraneous-dependencies */
-// console.clear(); // TODO: watchFix => it doesn't work properly since VSCode-terminal has bug: https://github.com/microsoft/vscode/issues/75141
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
@@ -12,6 +11,7 @@ const MinifyCssNames = require("mini-css-class-name/css-loader");
 // const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 const svgToMiniDataURI = require("mini-svg-data-uri");
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const srcPath = path.resolve(__dirname, "./src/");
@@ -199,18 +199,19 @@ module.exports = function (env, argv) {
       ],
     },
     plugins: [
+      new Dotenv(),
       new webpack.WatchIgnorePlugin({ paths: [/\.d\.ts$/] }), // ignore d.ts files in --watch mode
       new webpack.IgnorePlugin({ resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/ }), // it adds force-ignoring unused parts of modules like moment/locale/*.js
-      new webpack.DefinePlugin({
-        // it adds custom Global definition to the project like BASE_URL for index.html
-        "process.env": {
-          NODE_ENV: JSON.stringify(mode),
-          BASE_URL: '"/"',
-        },
-        "global.DEV": JSON.stringify(isDevMode),
-        "global.DEBUG": JSON.stringify(false),
-        "global.VERBOSE": JSON.stringify(false),
-      }),
+      // new webpack.DefinePlugin({
+      //   // it adds custom Global definition to the project like BASE_URL for index.html
+      //   "process.env": {
+      //     NODE_ENV: JSON.stringify(mode),
+      //     BASE_URL: '"/"',
+      //   },
+      //   "global.DEV": JSON.stringify(isDevMode),
+      //   "global.DEBUG": JSON.stringify(false),
+      //   "global.VERBOSE": JSON.stringify(false),
+      // }),
       new CaseSensitivePathsPlugin(), // it fixes bugs between OS in caseSensitivePaths (since Windows isn't CaseSensitive but Linux is)
       new HtmlWebpackPlugin({
         // it creates *.html with injecting js and css into template

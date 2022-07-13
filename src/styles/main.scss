@@ -3,8 +3,9 @@
 @import "fontface";
 
 body {
-  color: $basicColor;
-  font-family: "OpenSans-Regular", sans-serif;
+  color: $basicWhiteColor;
+  background-color: $backgroundBlackColor;
+  font-family: "Hind", sans-serif;
 }
 
 h2 {

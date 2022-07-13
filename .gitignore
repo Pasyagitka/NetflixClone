@@ -33,3 +33,7 @@ node_modules
 .stylelintcache
 
 tsconfig.tsbuildinfo
+
+.env
+.vscode/launch.json
+.vscode/settings.json
