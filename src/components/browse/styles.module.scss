@@ -1,0 +1,30 @@
+.browse {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transform: translateY(-5.5em);
+
+  > div:first-child {
+    position: relative;
+    padding-top: 56.25%;
+
+    > div:first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  span {
+    margin-left: 2em;
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+}

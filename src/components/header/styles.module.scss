@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  padding: 10px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: transparent;
+  transition: all 1s;
+}
+
+.logoContainer {
+  height: 4rem;
+
+  img {
+    width: 152px;
+    height: 100%;
+  }
+}
+
+.navBarContainer {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9em;
+  font-weight: 500;
+
+  > nav,
+  > div {
+    display: flex;
+    gap: 15px;
+    margin: 0 15px;
+    align-items: center;
+  }
+
+  a {
+    color: $lightTextColor;
+    text-decoration: none;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+}
+
+.dark {
+  background-color: $backgroundBlackColor;
+  transition: all 1s;
+}
+
+.icon {
+  width: 1.5em;
+  filter: invert(100%);
+  cursor: pointer;
+}
