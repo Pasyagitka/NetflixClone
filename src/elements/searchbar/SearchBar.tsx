@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import searchIcon from "images/search.svg";
 import { useState, useRef, useEffect } from "react";
-import { generatePath, useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 function SearchBar() {
@@ -19,7 +19,15 @@ function SearchBar() {
   };
 
   useEffect(() => {
-    const path = searchQuery === "" ? "/browse" : generatePath("/search?q=:q", { q: searchQuery });
+    const path =
+      searchQuery === ""
+        ? "/browse"
+        : {
+            pathname: "/search",
+            search: createSearchParams({
+              q: searchQuery,
+            }).toString(),
+          };
     navigate(path);
   }, [searchQuery]);
 

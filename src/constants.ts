@@ -12,4 +12,5 @@ export const moviesLinks = {
   romance: `${apiLinks.apiBaseUrl}/discover/movie/?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10749`,
   documentaries: `${apiLinks.apiBaseUrl}/discover/movie/?api_key=${process.env.REACT_APP_API_KEY}&with_genres=99`,
   netflixOriginals: `${apiLinks.apiBaseUrl}/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&with_networks=213`,
+  search: `${apiLinks.apiBaseUrl}/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&include_adult=false&query=`,
 };
