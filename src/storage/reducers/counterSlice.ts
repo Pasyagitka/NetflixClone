@@ -1,6 +1,10 @@
+/* eslint-disable default-param-last */
+import { PayloadAction } from "@reduxjs/toolkit";
 import { INCREMENT, DECREMENT } from "../actionTypes/counter";
 
-function counterReducer(state = 0, action) {
+const initialState = 0;
+
+function counterReducer(state = initialState, action: PayloadAction<number>) {
   switch (action.type) {
     case INCREMENT: {
       return state + 1;
