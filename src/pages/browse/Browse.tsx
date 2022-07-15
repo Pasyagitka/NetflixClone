@@ -11,10 +11,10 @@ import {
 import { useEffect } from "react";
 import { RootState } from "@/storage/store";
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import ImageCarousel from "../imageCarousel/ImageCarousel";
+import ImageCarousel from "../../components/imageCarousel/ImageCarousel";
 import styles from "./styles.module.scss";
-import MoviePlayer from "./player/MoviePlayer";
-import PlayerMovieInfo from "./player/playerMovieInfo/PlayerMovieInfo";
+import MoviePlayer from "../../components/player/MoviePlayer";
+import PlayerMovieInfo from "../../components/player/playerMovieInfo/PlayerMovieInfo";
 
 function Browse() {
   const dispatch = useAppDispatch();

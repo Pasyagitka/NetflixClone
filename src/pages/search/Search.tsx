@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/hooks";
 import { RootState } from "@/storage/store";
 import { fetchSearchResult } from "@/storage/actions/search";
 import { useSearchParams } from "react-router-dom";
-import MovieSearchResults from "../movieSearchResults/movieSearchResults";
+import MovieSearchResults from "../../components/movieSearchResults/movieSearchResults";
 
 function Search() {
   const dispatch = useAppDispatch();

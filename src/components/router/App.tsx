@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import Browse from "../browse/Browse";
-import NotFound from "../NotFound";
-import Search from "../search/Search";
+import Browse from "../../pages/browse/Browse";
+import NotFound from "../../pages/notFound/NotFound";
+import Search from "../../pages/search/Search";
 
 function App() {
   return (

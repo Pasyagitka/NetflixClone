@@ -1,6 +1,7 @@
 import useScroll from "@/hooks/useScroll";
 import classNames from "classnames";
 import logo from "images/logo.png";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import styles from "./styles.module.scss";
 
@@ -14,7 +15,9 @@ function Header() {
       })}
     >
       <div className={styles.logoContainer}>
-        <img src={logo} alt="netflix logo" />
+        <Link to="/">
+          <img src={logo} alt="netflix logo" />
+        </Link>
       </div>
       <Navbar />
     </header>
