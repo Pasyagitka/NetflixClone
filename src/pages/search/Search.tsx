@@ -6,16 +6,18 @@ import { useSearchParams } from "react-router-dom";
 import MovieSearchResults from "../../components/movieSearchResults/movieSearchResults";
 
 function Search() {
+  const searchParamName = "q";
   const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const searchResult = useAppSelector((state: RootState) => state.search.result);
-  const searchQuery = searchParams.get("q");
+  const searchQuery = searchParams.get(searchParamName);
 
-  // console.log(searchResult)
-
-  useEffect(() => {
+  function loadSearchResult() {
+    console.log('fetch search', searchQuery);
     dispatch(fetchSearchResult(searchQuery));
-  }, [dispatch]);
+  }
+
+  useEffect(loadSearchResult, [searchQuery]);
 
   return (
     <div>

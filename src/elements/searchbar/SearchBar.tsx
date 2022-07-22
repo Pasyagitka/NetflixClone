@@ -18,7 +18,8 @@ function SearchBar() {
     setActive(!isActive);
   };
 
-  useEffect(() => {
+  const searchByQuery = () => {
+    console.log(searchQuery, "q");
     const path =
       searchQuery === ""
         ? "/browse"
@@ -29,7 +30,9 @@ function SearchBar() {
             }).toString(),
           };
     navigate(path);
-  }, [searchQuery]);
+  };
+
+  useEffect(searchByQuery, [searchQuery]);
 
   return (
     <div
@@ -46,12 +49,8 @@ function SearchBar() {
           setSearchQuery(event.target.value);
         }}
         ref={inputRef}
-        onFocus={() => {
-          switchClass();
-        }}
-        onBlur={() => {
-          switchClass();
-        }}
+        onFocus={switchClass}
+        onBlur={switchClass}
         type="text"
         placeholder="Title, genres, people"
       />

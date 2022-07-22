@@ -44,8 +44,6 @@ function ImageCarousel({
           navigation
           pagination={{ clickable: true }}
           scrollbar={false}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           {listItems}
         </Swiper>

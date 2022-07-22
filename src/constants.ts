@@ -1,3 +1,9 @@
+export const backgroundMovie = {
+  title: "Narcos",
+  description: "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.",
+  url: "https://vimeo.com/384025132",
+};
+
 export const apiLinks = {
   apiBaseUrl: "https://api.themoviedb.org/3",
   imageBaseUrl: "https://image.tmdb.org/t/p/w500",

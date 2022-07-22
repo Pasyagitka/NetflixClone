@@ -1,6 +1,6 @@
-// .swiper-slide {
-//   height: auto !important;
-// }
+.swiper-slide {
+  transition: all 0.3s !important;
+}
 
 .swiper-wrapper {
   padding: 0 1em;
@@ -8,13 +8,12 @@
 
   &:hover {
     .swiper-slide {
-      transition: all 450ms !important;
+      //transition: all 450ms !important;
       opacity: 0.3 !important;
 
       &:hover {
         opacity: 1 !important;
         z-index: 1000;
-        transition: all 0.3s;
       }
     }
   }

@@ -11,6 +11,7 @@ import {
 import { useEffect } from "react";
 import { RootState } from "@/storage/store";
 import { useAppDispatch, useAppSelector } from "@/hooks";
+import { backgroundMovie } from "@/constants";
 import ImageCarousel from "../../components/imageCarousel/ImageCarousel";
 import styles from "./styles.module.scss";
 import MoviePlayer from "../../components/player/MoviePlayer";
@@ -20,13 +21,8 @@ function Browse() {
   const dispatch = useAppDispatch();
   const counter = useAppSelector((state: RootState) => state.counter);
   const movies = useAppSelector((state: RootState) => state.movies);
-  const backgroundMovie = {
-    title: "Narcos",
-    description: "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.",
-    url: "https://vimeo.com/384025132",
-  };
 
-  useEffect(() => {
+  function loadMovies() {
     dispatch(fetchNetflixOriginals());
     dispatch(fetchTrending());
     dispatch(fetchTopRated());
@@ -35,7 +31,9 @@ function Browse() {
     dispatch(fetchHorrorMovies());
     dispatch(fetchRomance());
     dispatch(fetchDocumentaries());
-  }, [dispatch]);
+  }
+
+  useEffect(loadMovies, [dispatch]);
 
   return (
     <div className={styles.browse}>
@@ -44,10 +42,6 @@ function Browse() {
         <PlayerMovieInfo movie={backgroundMovie} />
       </div>
       <div>
-        <span>Browse</span>
-        <input type="text" value={counter} />
-        <input type="button" onClick={() => dispatch({ type: "INCREMENT" })} value="+" />
-        <input type="button" onClick={() => dispatch({ type: "DECREMENT" })} value="-" />
         <div className={styles.mainContent}>
           <ImageCarousel title="Netflix Originals" isPoster movies={movies.netflixOriginals} />
           <ImageCarousel title="Trending" movies={movies.trending} />
