@@ -22,7 +22,7 @@ function ImageCarousel({
   movies: Array<movieDto>;
 }) {
   const listItems = movies.map((movie) => (
-    <SwiperSlide>
+    <SwiperSlide key={movie.id}>
       <ImageItem url={apiLinks.imageBaseUrl + (isPoster ? movie.poster_path : movie.backdrop_path)} />
     </SwiperSlide>
   ));
