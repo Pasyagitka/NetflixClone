@@ -1,13 +1,14 @@
 import { useState } from "react";
 import defaultImage from "images/image-not-available.jpg";
 import { useAppDispatch } from "@/hooks";
-import { showModal, setMovie } from "@/storage/actions/app";
+import { getMovieDetails, showModal } from "@/storage/actions/app";
 import { movieDto } from "@/types/dto/movieDto";
 import { apiLinks } from "@/constants";
 import styles from "./styles.module.scss";
 
 function ImageItem({ movie, isPoster }: { movie: movieDto; isPoster: boolean }) {
   const url = apiLinks.imageBaseUrl + (isPoster ? movie.poster_path : movie.backdrop_path);
+
   const [imgSrc, setImgSrc] = useState(url);
   const dispatch = useAppDispatch();
 
@@ -16,7 +17,7 @@ function ImageItem({ movie, isPoster }: { movie: movieDto; isPoster: boolean }) 
   };
 
   const openModal = () => {
-    dispatch(setMovie(movie));
+    dispatch(getMovieDetails({ mediaType: movie.media_type, mediaId: movie.id }));
     dispatch(showModal(true));
   };
 

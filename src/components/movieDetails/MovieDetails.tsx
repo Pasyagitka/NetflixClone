@@ -1,15 +1,17 @@
-import { movieDto } from "@/types/dto/movieDto";
 import ReactDOM from "react-dom";
 import { useAppDispatch } from "@/hooks";
-import { showModal } from "@/storage/actions/app";
+import { clearModal, showModal } from "@/storage/actions/app";
+import { movieDetailsDto } from "@/types/dto/movieDetailsDto";
 import styles from "./styles.module.scss";
 import MovieInfo from "./movieInfo/MovieInfo";
 
-function MovieDetails({ movie, isOpen }: { movie: movieDto; isOpen: boolean }) {
+function MovieDetails({ movie, isOpen }: { movie: movieDetailsDto; isOpen: boolean }) {
+  const modalRoot = document.getElementById("modal-root") as HTMLElement;
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
     dispatch(showModal(false));
+    dispatch(clearModal());
   };
 
   return (
@@ -20,7 +22,7 @@ function MovieDetails({ movie, isOpen }: { movie: movieDto; isOpen: boolean }) {
           <MovieInfo movie={movie} />
         </div>
       </div>,
-      document.getElementById("modal-root")
+      modalRoot
     )
   );
 }

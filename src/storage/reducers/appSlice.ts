@@ -1,18 +1,26 @@
 /* eslint-disable no-param-reassign */
-import { movieDto } from "@/types/dto/movieDto";
+import { movieDetailsDto } from "@/types/dto/movieDetailsDto";
 import { createReducer } from "@reduxjs/toolkit";
-import { showModal, setMovie } from "../actions/app";
+import { showModal, clearModal, getMovieDetails } from "../actions/app";
 
 type AppStateProps = {
   showModal: boolean;
-  movie: movieDto;
+  movie: movieDetailsDto;
 };
 
 const initialState = {
   showModal: false,
   movie: {
     title: "",
-    description: "",
+    name: "",
+    vote_average: 0,
+    release_date: 0,
+    first_air_date: 0,
+    runtime: 0,
+    episode_run_time: 0,
+    number_of_episodes: 0,
+    number_of_seasons: 0,
+    overview: "",
   },
 };
 
@@ -20,7 +28,10 @@ const appStateReducer = createReducer<AppStateProps>(initialState, (builder) => 
   builder.addCase(showModal, (state, action) => {
     state.showModal = action.payload;
   });
-  builder.addCase(setMovie, (state, action) => {
+  builder.addCase(clearModal, (state, action) => {
+    state.movie = initialState.movie;
+  });
+  builder.addCase(getMovieDetails.fulfilled, (state, action) => {
     state.movie = action.payload;
   });
 });

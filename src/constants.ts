@@ -1,6 +1,8 @@
+import { getMovieDetailsType } from "./types/getMovieDetailsType";
+
 export const backgroundMovie = {
   title: "Narcos",
-  description: "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.",
+  overview: "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.",
   url: "https://vimeo.com/384025132",
 };
 
@@ -20,3 +22,6 @@ export const moviesLinks = {
   netflixOriginals: `${apiLinks.apiBaseUrl}/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&with_networks=213`,
   search: `${apiLinks.apiBaseUrl}/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&include_adult=false&query=`,
 };
+
+export const detailsLink = ({ mediaType, mediaId }: getMovieDetailsType) =>
+  `${apiLinks.apiBaseUrl}/${mediaType ?? "movie"}/${mediaId}?api_key=${process.env.REACT_APP_API_KEY}`;
