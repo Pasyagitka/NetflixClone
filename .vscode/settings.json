@@ -57,7 +57,7 @@
     "editor.wordSeparators": "`~!%^&*()=+[{]}\\|;:'\",.<>/?$" // ability to select '#fff', 'font-family', '--cssVariable' at once
   },
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.css-language-features",
     "editor.formatOnSave": true,
     "editor.wordSeparators": "`~!%^&*()=+[{]}\\|;:'\",.<>/?" // ability to select '#fff', 'font-family', '--cssVariable', '$var' at once
   },
