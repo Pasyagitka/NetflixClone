@@ -1,4 +1,3 @@
-import { apiLinks } from "@/constants";
 import { movieDto } from "@/types/dto/movieDto";
 import ImageItem from "../imageItem/ImageItem";
 import styles from "./styles.module.scss";

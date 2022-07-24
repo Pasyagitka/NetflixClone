@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Switch } from "react-router-dom";
 import { useAppSelector } from "@/hooks";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
