@@ -1,7 +1,7 @@
 import { useState } from "react";
 import defaultImage from "images/image-not-available.jpg";
 import { useAppDispatch } from "@/hooks";
-import { getMovieDetails, showModal } from "@/storage/actions/app";
+import { getMovieDetails, setMovie, showModal } from "@/storage/actions/app";
 import { movieDto } from "@/types/dto/movieDto";
 import { apiLinks } from "@/constants";
 import styles from "./styles.module.scss";
@@ -16,8 +16,8 @@ function ImageItem({ movie, isPoster }: { movie: movieDto; isPoster: boolean }) 
     setImgSrc(defaultImage);
   };
 
-  const openModal = () => {
-    dispatch(getMovieDetails({ mediaType: movie.media_type, mediaId: movie.id }));
+  const openModal = async () => {
+    await dispatch(getMovieDetails({ mediaType: movie.media_type || (isPoster ?  "tv" : "movie"), mediaId: movie.id }));
     dispatch(showModal(true));
   };
 

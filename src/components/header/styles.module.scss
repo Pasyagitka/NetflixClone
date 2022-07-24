@@ -3,16 +3,15 @@
   padding: 10px 25px;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
   background-color: transparent;
   transition: all 1s;
 }
 
 .logoContainer {
-  height: 4rem;
+  height: 3.9rem;
 
   img {
-    width: 152px;
     height: 100%;
   }
 }
@@ -30,13 +29,13 @@
   > div {
     display: flex;
     gap: 15px;
-    margin: 0 15px;
     align-items: center;
   }
 
   a {
     color: $lightTextColor;
     text-decoration: none;
+    margin-right: 0.2em;
 
     &:hover {
       color: $linkHoverColor;

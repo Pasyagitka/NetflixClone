@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { movieDetailsDto } from "@/types/dto/movieDetailsDto";
 import { createReducer } from "@reduxjs/toolkit";
-import { showModal, clearModal, getMovieDetails } from "../actions/app";
+import { showModal, setMovie, clearModal, getMovieDetails } from "../actions/app";
 
 type AppStateProps = {
   showModal: boolean;
@@ -30,6 +30,9 @@ const appStateReducer = createReducer<AppStateProps>(initialState, (builder) => 
   });
   builder.addCase(clearModal, (state, action) => {
     state.movie = initialState.movie;
+  });
+  builder.addCase(setMovie, (state, action) => {
+    state.movie = action.payload;
   });
   builder.addCase(getMovieDetails.fulfilled, (state, action) => {
     state.movie = action.payload;

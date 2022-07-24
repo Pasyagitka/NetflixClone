@@ -9,6 +9,7 @@ export const backgroundMovie = {
 export const apiLinks = {
   apiBaseUrl: "https://api.themoviedb.org/3",
   imageBaseUrl: "https://image.tmdb.org/t/p/w500",
+  imageFullHDBaseUrl: "https://image.tmdb.org/t/p/original",
 };
 
 export const moviesLinks = {
@@ -23,5 +24,7 @@ export const moviesLinks = {
   search: `${apiLinks.apiBaseUrl}/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&include_adult=false&query=`,
 };
 
-export const detailsLink = ({ mediaType, mediaId }: getMovieDetailsType) =>
-  `${apiLinks.apiBaseUrl}/${mediaType ?? "movie"}/${mediaId}?api_key=${process.env.REACT_APP_API_KEY}`;
+export const detailsLink = ({ mediaType, mediaId }: getMovieDetailsType) => {
+  console.log(mediaType, "!!");
+  return `${apiLinks.apiBaseUrl}/${mediaType ?? "movie"}/${mediaId}?api_key=${process.env.REACT_APP_API_KEY}`;
+}

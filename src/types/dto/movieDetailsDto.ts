@@ -1,4 +1,5 @@
 export type movieDetailsDto = {
+  id: Key | null | undefined;
   title: string;
   name: string;
   vote_average: number;

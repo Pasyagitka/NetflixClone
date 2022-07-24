@@ -8,8 +8,8 @@ function PlayerMovieInfo({ movie }: { movie: movieDto }) {
   return (
     <div className={styles.playerMovieInfoContainer}>
       <div className={styles.movieInfoContainer}>
-        <span>{movie.title}</span>
-        <span>{movie.overview}</span>
+        <span className={styles.title}>{movie.title}</span>
+        <span className={styles.overview}>{movie.overview}</span>
         <div>
           <button type="button" className={styles.controlButton}>
             <img src={play} width="15px" alt="" />

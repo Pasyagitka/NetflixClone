@@ -16,7 +16,7 @@ function Header() {
     >
       <div className={styles.logoContainer}>
         <Link to="/">
-          <img src={logo} alt="netflix logo" />
+          <img src={logo} alt="" />
         </Link>
       </div>
       <Navbar />
