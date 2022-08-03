@@ -84,3 +84,15 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+@media (max-width: 1184px) {
+  .dropdown img {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .dropdown {
+    display: none;
+  }
+}

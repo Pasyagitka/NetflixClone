@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import bellIcon from "images/bell.svg";
 import SearchBar from "@/elements/searchbar/SearchBar";
+import dropDownIcon from "images/drop-down-arrow.svg";
 import AccountDropdown from "./dropdown/AccountDropdown";
 import styles from "./styles.module.scss";
 
 function Navbar() {
   return (
     <div className={styles.navBarContainer}>
+      <img src={dropDownIcon} alt="" />
       <nav>
         <NavLink to="#">Home</NavLink>
         <NavLink to="#">TV Shows</NavLink>

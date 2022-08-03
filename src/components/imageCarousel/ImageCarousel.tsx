@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import classNames from "classnames";
 import { movieDto } from "@/types/dto/movieDto";
 import styles from "./styles.module.scss";
-import { apiLinks } from "../../constants";
 import "../../styles/swiper.scss";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -44,6 +43,24 @@ function ImageCarousel({
           navigation
           pagination={{ clickable: true }}
           scrollbar={false}
+          breakpoints={{
+            1378: {
+              slidesPerView: 5,
+              slidesPerGroup: 5,
+            },
+            998: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+            },
+            625: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+            },
+            0: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+          }}
         >
           {listItems}
         </Swiper>

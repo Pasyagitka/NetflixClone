@@ -20,10 +20,10 @@ function PlayerMovieInfo({ movie }: { movie: movieDto }) {
             My List
           </button>
         </div>
-        <button type="button" className={styles["mute-button"]}>
-          <img src={mute} width="15px" alt="" className={styles.invertedImage} />
-        </button>
       </div>
+      <button type="button" className={styles["mute-button"]}>
+        <img src={mute} width="15px" alt="" className={styles.invertedImage} />
+      </button>
     </div>
   );
 }

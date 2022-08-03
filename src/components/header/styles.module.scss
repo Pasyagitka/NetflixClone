@@ -41,6 +41,12 @@
       color: $linkHoverColor;
     }
   }
+
+  > img {
+    width: 1em;
+    filter: invert(100%);
+    display: none;
+  }
 }
 
 .dark {
@@ -52,4 +58,30 @@
   width: 1.5em;
   filter: invert(100%);
   cursor: pointer;
+}
+
+@media (max-width: 1184px) {
+  .navBarContainer {
+    > nav,
+    > div > a {
+      display: none;
+    }
+
+    > img {
+      display: initial;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navBarContainer {
+    > img {
+      display: none;
+    }
+
+    > div > img {
+      display: none;
+    }
+    justify-content: end;
+  }
 }

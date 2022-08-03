@@ -2,10 +2,15 @@
 @import "sanitize.css";
 @import "fontface";
 
+html {
+  font-size: 16px;
+}
+
 body {
   color: $basicWhiteColor;
   background-color: $backgroundBlackColor;
   font-family: "Hind", sans-serif;
+  font-size: 1rem;
 }
 
 h2 {
@@ -15,50 +20,7 @@ h2 {
 }
 
 ::placeholder {
-  /*test for autoprefixer in postcss*/
-  color: antiquewhite;
-}
-
-.test-block {
-  border: 4px dotted black;
-  /* stylelint-disable-next-line plugin/no-unsupported-browser-features*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.test-block + .test-block {
-  margin-top: 20px;
-}
-
-/* starting ENTER animation */
-.messageout-enter {
-  position: absolute;
-  top: 0;
-  left: calc(13% + 5px);
-  right: calc(13% + 5px);
-  opacity: 0.01;
-  transform: translateY(0%) scale(0.01);
-}
-
-/* ending ENTER animation */
-.messageout-enter-active {
-  opacity: 1;
-  transform: translateY(0%) scale(1);
-  transition: all 1000ms ease-in-out;
-}
-
-/* starting EXIT animation */
-.messageout-exit {
-  opacity: 1;
-  transform: scale(1.01);
-}
-
-/* ending EXIT animation */
-.messageout-exit-active {
-  opacity: 0;
-  transform: scale(4);
-  transition: all 1000ms ease-in-out;
+  color: $lightTextColor;
 }
 
 .modal {
@@ -78,4 +40,10 @@ h2 {
   background-color: #000000;
   margin: 15% auto;
   padding: 20px;
+}
+
+@media (max-width: 1184px) {
+  body {
+    font-size: 0.8rem;
+  }
 }
