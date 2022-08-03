@@ -8,7 +8,7 @@ import {
   fetchDocumentaries,
   fetchNetflixOriginals,
 } from "@/storage/actions/movies";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RootState } from "@/storage/store";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { backgroundMovie } from "@/constants";
@@ -21,6 +21,7 @@ function Browse() {
   const dispatch = useAppDispatch();
   const counter = useAppSelector((state: RootState) => state.counter);
   const movies = useAppSelector((state: RootState) => state.movies);
+  const [isMuted, setIsMuted] = useState(true);
 
   function loadMovies() {
     dispatch(fetchNetflixOriginals());
@@ -35,11 +36,16 @@ function Browse() {
 
   useEffect(loadMovies, [dispatch]);
 
+  const handleMute = () => {
+    setIsMuted(!isMuted);
+    console.log(isMuted);
+  };
+
   return (
     <div className={styles.browse}>
       <div>
-        <MoviePlayer url={backgroundMovie.url} />
-        <PlayerMovieInfo movie={backgroundMovie} />
+        <MoviePlayer url={backgroundMovie.url} isMuted={isMuted} />
+        <PlayerMovieInfo movie={backgroundMovie} isMuted={isMuted} onClick={handleMute} />
       </div>
       <div>
         <div className={styles.mainContent}>

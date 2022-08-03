@@ -1,10 +1,11 @@
 import play from "images/play-button.svg";
 import add from "images/add.svg";
 import mute from "images/mute.svg";
+import unmute from "images/unmute.svg";
 import { movieDto } from "@/types/dto/movieDto";
 import styles from "./styles.module.scss";
 
-function PlayerMovieInfo({ movie }: { movie: movieDto }) {
+function PlayerMovieInfo({ movie, isMuted, onClick }: { movie: movieDto; isMuted: boolean; onClick: any }) {
   return (
     <div className={styles.playerMovieInfoContainer}>
       <div className={styles.movieInfoContainer}>
@@ -21,8 +22,8 @@ function PlayerMovieInfo({ movie }: { movie: movieDto }) {
           </button>
         </div>
       </div>
-      <button type="button" className={styles["mute-button"]}>
-        <img src={mute} width="15px" alt="" className={styles.invertedImage} />
+      <button type="button" className={styles["mute-button"]} onClick={onClick}>
+        <img src={isMuted ? mute : unmute} width="15px" alt="" className={styles.invertedImage} />
       </button>
     </div>
   );
