@@ -1,0 +1,11 @@
+.imageContainer {
+  cursor: pointer;
+  // height: 100%;
+}
+
+.image {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+}

@@ -1,0 +1,16 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 82px - 60px);
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  span {
+    font-size: 1.3em;
+  }
+}

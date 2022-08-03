@@ -1,0 +1,48 @@
+.swiper-slide {
+  transition: all 0.3s !important;
+}
+
+.swiper-wrapper {
+  padding: 0 1em;
+  margin: 35px 0;
+
+  &:hover {
+    .swiper-slide {
+      //transition: all 450ms !important;
+      opacity: 0.3 !important;
+
+      &:hover {
+        opacity: 1 !important;
+        z-index: 1000;
+      }
+    }
+  }
+}
+
+.swiper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  right: 3em;
+  text-align: right !important;
+}
+
+.swiper-pagination-bullets {
+  bottom: 0px !important;
+  left: auto !important;
+  width: auto !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: $basicWhiteColor !important;
+  top: 55% !important;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background-color: $basicWhiteColor !important;
+}

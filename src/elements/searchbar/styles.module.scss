@@ -1,0 +1,41 @@
+.search-input-container {
+  display: flex;
+  justify-content: space-between;
+  color: $lightTextColor;
+  padding: 5px;
+  border: none;
+  overflow: hidden;
+  height: 2.5em;
+
+  button {
+    background: none;
+    border: none;
+  }
+
+  input {
+    background-color: transparent;
+    flex: 1;
+    font-size: 1em;
+    color: inherit;
+    width: 0;
+    transition: all 0.3s;
+    padding: 0;
+    border: none;
+
+    &:focus {
+      display: inline-block;
+      outline: none;
+      width: 12em;
+    }
+  }
+
+  img {
+    cursor: pointer;
+    width: 20px;
+  }
+}
+
+.toggled {
+  border: 1px solid $basicWhiteColor;
+  background-color: $backgroundBlackColor;
+}

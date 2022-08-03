@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  padding: 10px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: transparent;
+  transition: all 1s;
+}
+
+.logoContainer {
+  height: 3.9rem;
+
+  img {
+    height: 100%;
+  }
+}
+
+.navBarContainer {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9em;
+  font-weight: 500;
+
+  > nav,
+  > div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  a {
+    color: $lightTextColor;
+    text-decoration: none;
+    margin-right: 0.2em;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+
+  > img {
+    width: 1em;
+    filter: invert(100%);
+    display: none;
+  }
+}
+
+.dark {
+  background-color: $backgroundBlackColor;
+  transition: all 1s;
+}
+
+.icon {
+  width: 1.5em;
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+@media (max-width: 1184px) {
+  .navBarContainer {
+    > nav,
+    > div > a {
+      display: none;
+    }
+
+    > img {
+      display: initial;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navBarContainer {
+    > img {
+      display: none;
+    }
+
+    > div > img {
+      display: none;
+    }
+    justify-content: end;
+  }
+}
